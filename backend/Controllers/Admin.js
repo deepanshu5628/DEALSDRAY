@@ -85,7 +85,8 @@ const login=async (req,res)=>{
         res.status(200).json({
             success:true,
             message:"successfully loged in ",
-            token,    
+            token,
+            userdetails:userName,    
         })
     } catch (error) {
         console.log("Error in login controller");

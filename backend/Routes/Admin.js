@@ -8,4 +8,6 @@ const{login, admincreate}=require('../Controllers/Admin');
 router.post("/login",login);
 router.post("/createadmin",admincreate);
 
+
+
 module.exports=router;

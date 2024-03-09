@@ -13,4 +13,7 @@ export const admin={
 
 export const employee={
     EMPLOYEE_CREATE_API:BASE_URL_EMPLOYEE+"/createemployee",
+    GETALLDETAILS_API:BASE_URL_EMPLOYEE+"/getalldetails",
+    DELETE_API:BASE_URL_EMPLOYEE+"/delete",
+    UPDATE_API:BASE_URL_EMPLOYEE+"/update",
 }

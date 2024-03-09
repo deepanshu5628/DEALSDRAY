@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import {Link, Navigate, useLocation, useNavigate} from "react-router-dom";
 import { logout } from "../../services/operations/authAPI";
 
 function Navbar(){
     const dispatch=useDispatch();
+    const location=useLocation();
     const navigate=useNavigate();
     const {token,username}=useSelector((state)=>state.auth);
-   
+    const {totalemployee}=useSelector((state)=>state.employee);
 
+    
     function logouthandler(){
         dispatch(logout(navigate));
     }
@@ -31,10 +33,13 @@ function Navbar(){
                             <button>Employee List</button>
                         </Link>
                         <Link to={"/createEmployee "}>
-                            <button>Create</button>
+                            <button >Create</button>
                         </Link>
                     </div>
                     <div className="flex gap-6 cursor-pointer">
+                        {location.pathname ==="/employeelist"&& <div>
+                            <p>Total Employes:{totalemployee}</p>
+                            </div>}
                         <p>{username}</p>
                         <button onClick={logouthandler}>Logout</button>
                     </div>

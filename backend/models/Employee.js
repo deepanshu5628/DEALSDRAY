@@ -8,12 +8,10 @@ const employeeSchema=new mongoose.Schema({
     email:{
         type:String,
         required:true,
-
     },
-    mobileNo:{
+    mobileno:{
         type:Number,
         required:true,
-    
     },
     designation:{
         type:String,
@@ -33,8 +31,13 @@ const employeeSchema=new mongoose.Schema({
     image:{
         type:String,
         required:true,
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now(),
+        required:true,
     }
 })
 
-const employee=mongoose.model(("employee",employeeSchema));
+const employee=mongoose.model("employee",employeeSchema);
 module.exports=employee;

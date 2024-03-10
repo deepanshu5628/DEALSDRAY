@@ -2,7 +2,7 @@ require("dotenv").config();
 // db
 const mongoose=require("mongoose");
 let connectdb=async()=>{
-    await mongoose.connect("mongodb://127.0.0.1:27017/dealsdry");
+    await mongoose.connect(`${process.env.MONGODB}`);
 }
  const startdb=()=>{
     connectdb().then(()=>console.log("Connected to db successsfully"))
